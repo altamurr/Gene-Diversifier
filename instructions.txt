@@ -1,0 +1,28 @@
+Instructions for running sequenceDiversifier.py to generate divergent coding sequences
+that are optimised for expression, all expressing a user-specified protein of interest
+
+A Python 2.7 installation is required for running sequenceDiversifier.py.
+
+The following Python libraries need to be installed prior to launching the program:
+1) Numpy (https://pypi.org/project/numpy/)
+2) Scipy (https://www.scipy.org/)
+3) Biopython (https://biopython.org/)
+
+Download and keep sequenceDiversifier.py and data files (cho_/mouse_/human_codon_usage.csv) in the same directory 
+
+Running the program: open terminal and run sequenceDiversifier.py by typing: python sequenceDiversifier.py
+
+Prompts on the terminal window will guide the user to enter the following:
+- protein sequence (paste it into the terminal window) and number of degenerate DNA sequences to generate (integer number). Press Return key after pasting protein sequence and after entering number of DNA sequences
+- expression host (currently supported: cho, mouse, human): type desired expression host (case-sensitive) and press Return key
+- RSCU value below which codons are discarded: a reasonable working range is 0.3 - 0.9. Setting too high an RSCU threshold will result in very similar output sequences
+- RSCU value below which codons not ending in G/C are discarded: if a high GC content is desired, this threshold can be set higher than the previous RSCU threshold, otherwise enter the same value entered above
+
+Output files and statistics
+A .csv file named codingSequenceVariants.csv is outputted to the working directory. This file contains the degenerate DNA sequences as well as their CAI scores and GC content. On the terminal window, statistics on hamming distance and longest stretch of unbroken homology in the degenerate sequence set are given
+
+
+
+
+
+
